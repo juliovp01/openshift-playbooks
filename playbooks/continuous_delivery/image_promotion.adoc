@@ -7,6 +7,7 @@ v1.0, 2015-10-05
 :toc: macro
 :toc-title:
 
+include::../../_includes/variables.adoc[]
 toc::[]
 
 This document provides strategies for promoting an application between various OpenShift environments. The level of segregation of how environments are divided are at the discretion of the user. It is out of the scope of this particular document on how the application is built and packed into the initial image
@@ -20,7 +21,7 @@ Each strategy defined within this document will have several consistent themes:
 ** It is _recommended_ that the Jenkins CI server be used to facilitate the promotion process, however standalone scripts may be used instead if desired
 Docker client to manipulate images
 
-NOTE: The user executing the scripts must be a member of the docker group in order to access the Docker socket. Additional information on this topic can be found https://docs.docker.com/installation/fedora/[here]
+NOTE: The user executing the scripts must be a member of the docker group in order to access the Docker socket. Additional information on this topic can be found https://docs.docker.com/engine/installation/linux/fedora/[here]
 
 == Prerequisites
 

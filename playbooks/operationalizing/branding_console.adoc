@@ -10,6 +10,7 @@ v1.0, 2016-03-16
 
 
 
+include::../../_includes/variables.adoc[]
 toc::[]
 
 This document provides the ways to change brand images on web console, login page and template. From time to time, using
@@ -159,13 +160,13 @@ oauthConfig:
 
 NOTE: The indent space is remarkably important. Sometimes, master server can not load it because of different space length.
 
-* *Now restart atomic-o penshift-master service*
+* *Now restart atomic-openshift-master service*
 ```
 # systemctl atomic-openshift-master restart
 ```
 
 === Web console logo
-After login, it is allowed to modify anything on console style using extended `css/javascrpt/images`. https://docs.openshift.com/enterprise/3.1/install_config/web_console_customization.html[The official document] explain it in detail but it could take a little bit long time to configure due to yaml syntax of master-config.xml. Hence, I recommand to follow this chapter exactly, then you can see brand new logo without trial and error.
+After login, it is allowed to modify anything on console style using extended `css/javascrpt/images`. {docs_url}install_config/web_console_customization.html[The official document] explains it in detail, but it could take a little bit of time to configure due to yaml syntax of the master-config.xml file. Hence, I recommend following this chapter exactly, then you can see brand new logo without trial and error.
 
 .Workflow
 . Create CSS/Image folder
@@ -273,17 +274,12 @@ Use the css class in a template::
 <1> This value must be same as the css style in extension.css
 
 []
-== Ansible Playbook
-This ansible playbook contains 4 roles : resize_image, configure_login_logo, configure_webconsole_logo, demo_template_icon_change.
-Those roles can be executed by 1 playbook or each role can be executed. This chapter will explain how to configure "Branding console" with ansible playbook.
+== Ansible Playbooks
+Using below ansible playbook, it can be easy to change logo of OpenShift Login Page and Web Console. 
 
+*Playbooks Links*
 
-=== Ansible role
-- resize_image
-- configure_login_logo
-- configure_webconsole_logo
-- demo_template_icon_change
+- link:https://github.com/redhat-cop/openshift-toolkit/tree/master/branding/ansible-playbook-openshift-custom-login-page[ansible-playbook-openshift-custom-login-page]
+- link:https://github.com/redhat-cop/openshift-toolkit/tree/master/branding/ansible-playbook-openshift-custom-webconsole-logo[ansible-playbook-openshift-custom-webconsole-logo]
 
-=== Usage
-TBD
 
